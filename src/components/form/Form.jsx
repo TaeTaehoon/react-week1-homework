@@ -1,31 +1,16 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function Form() {
-  const [todos, setTodos] = useState([]);
-  const [inputs, setInputs] = useState({
-    title: "",
-    description: "",
-  });
+function Form(props) {
+  const title = props.title_input;
+  const description = props.description_input;
+  const onChange = props.onChange;
+  const onSubmit = props.onSubmit;
 
-  const { title, description } = inputs;
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setInputs({ ...inputs, [name]: value });
-  };
-
-  const onSubmit = (e) => {
-    const todo = {
-      title: inputs.title,
-      description: inputs.description,
-    };
-    setTodos([...todos, todo]);
-    setInputs({ title: "", description: "" });
-  };
   return (
     <div className="form_container">
       <div className="input_group">
+        <span>제목:</span>
         <input
           type="text"
           name="title"
@@ -33,6 +18,7 @@ function Form() {
           placeholder="제목"
           value={title}
         ></input>
+        <span>할일:</span>
         <input
           type="text"
           name="description"
