@@ -14,19 +14,29 @@
 }
 
 .input_group input {
+  color: #576057;
   height: 2rem;
   width: 12rem;
   border-radius: 10px;
-  border: 2px solid green;
+  background-color: #fcf7f3;
+  border: 2px solid #99a799;
   font-size: 1.2rem;
 }
 
 .form_container button {
+  color: #fef5ed;
   font-size: 1.2rem;
   width: 12rem;
   height: 2.5rem;
-  border: 2px solid green;
+  background: none;
+  border: 2px solid #99a799;
   border-radius: 10px;
   padding: 5px 0;
   margin-right: 20px;
+  transition: all 0.25s;
+}
+
+.form_container button:hover {
+  background-color: #fef5ed;
+  color: #99a799;
 }

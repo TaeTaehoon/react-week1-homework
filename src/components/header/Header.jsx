@@ -4,7 +4,7 @@ import "./style.css";
 function Header({ children }) {
   return (
     <div className="header">
-      <h1>My Todo List@React</h1>
+      <h1>오늘의 할 일@React</h1>
       {children}
     </div>
   );
