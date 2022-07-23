@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Layout from "./components/layout/Layout";
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
-import TodoList from "./components/pages/TodoList";
+import TodoList from "./pages/TodoList";
 import Todo from "./components/todo/Todo";
 import List from "./components/list/List";
 import "./App.css";
@@ -10,15 +10,15 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   //todos의 시작값을 빈 배열로 설정해줘야함.
+  //state를 만들때 좌항의 []의 내용은[state, state를 대체할 값]
   const [inputs, setInputs] = useState({
-    id: 0,
     title: "",
     description: "",
-    isDone: false,
-  }); //input 값을 읽어와서 todos에 넣기 위한 뼈대 구조를 만들어둬야함.
+  }); //input값들을 동시에 읽어와서 관리하기 위해 객체형태로 묶어서 관리함
 
   const onChange = (e) => {
     const { name, value } = e.target;
+    //구조분해 할당을 통해 e.target.name과 e.target.value값을 가져와서 객체형태로 저장
     setInputs({ ...inputs, [name]: value });
   }; //todos에 넣기 위해 input 두개의 값을 묶어서 inputs의 [name]과 key가 같은 요소에 value를 대입시킴.
 
